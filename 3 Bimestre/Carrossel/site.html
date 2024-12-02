@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="site.css">
+    <title>Tec ifmt</title>
+</head>
+<body>
+    <!-- Seção de vídeo -->
+    <div id="secaovideo">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/076h6h_7nw0?si=nc6JbJ3af-d9PON2" 
+            title="YouTube video player" frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        </iframe>
+    </div>
+
+    <!-- Seção texto do vídeo -->
+    <div id="titulovideo">
+        <h1>Moranguinho</h1>
+        <p id="textovideo">
+            Moranguinho é uma série de animação que conta a história de uma garotinha chamada Moranguinho, que vive em um mundo doce e colorido, cheio de frutas e amigos. Ela é gentil, alegre e sempre disposta a ajudar os outros, aprendendo importantes lições sobre amizade, bondade e cooperação. A série é conhecida por seus personagens encantadores e por transmitir mensagens positivas para o público infantil.
+        </p>
+    </div>
+
+    <!-- Seção carrossel -->
+    <div id="carrossel">
+        <h1>MAIS DE QUARENTA MIL VISUALIZAÇÕES</h1>
+
+        <!-- Divisão de cards -->
+        <div id="cards">
+            <img id="setaesquerda"onclick="DeslizarParaEsquerda()" class="seta"  src="setaesquerda.svg" alt="Seta esquerda">
+            <img id="Leonardo"  class="card" src="Leonardo.svg" alt="Leonardo">
+            <img id="Samantha"  class="card"  src="Samantha.svg" alt="Samantha">
+            <img id="Bruna" class="card"  src="Bruna.svg" alt="Bruna">
+            <img id="setadireita" onclick="DeslizarParaDireita()"  class="seta"  src="setadireita.svg" alt="setadireita">
+        </div>
+    </div>
+    <script src="site.js"></script>
+</body>
+</html>
