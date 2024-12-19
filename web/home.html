@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Agendamento de Banho e Tosa</title>
+    
+</head>
+<body>
+    <div class="header">
+        <img src="image.png" alt="Título - Agendamento de Banho e Tosa">
+    </div>
+
+    <div class="container">
+        <div class="form-section">
+            <form id="form">
+                <label for="nomePet">Nome do Pet:</label>
+                <input type="text" id="nomePet" placeholder="Nome do Pet" required>
+                
+                <label for="raca">Raça:</label>
+                <input type="text" id="raca" placeholder="Raça" required>
+                
+                <label for="dono">Dono do Pet:</label>
+                <input type="text" id="dono" placeholder="Nome do Dono" required>
+                
+                <label for="telefone">Telefone:</label>
+                <input type="tel" id="telefone" placeholder="(00) 00000-0000" required>
+
+                <button type="button" onclick="adicionarPet()">Agendar Pet</button>
+            </form>
+        </div>
+
+        <div class="table-section">
+            <h2>Agendamentos</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome do Pet</th>
+                        <th>Raça</th>
+                        <th>Dono do Pet</th>
+                        <th>Telefone</th>
+                        <th>Remover</th>
+                    </tr>
+                </thead>
+                <tbody id="tabelaPets"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        let id = 1;
+
+        function adicionarPet() {
+            const nomePet = document.getElementById("nomePet").value;
+            const raca = document.getElementById("raca").value;
+            const dono = document.getElementById("dono").value;
+            const telefone = document.getElementById("telefone").value;
+
+            if (nomePet && raca && dono && telefone) {
+                const tabela = document.getElementById("tabelaPets");
+                const novaLinha = `
+                    <tr>
+                        <td>${id}</td>
+                        <td>${nomePet}</td>
+                        <td>${raca}</td>
+                        <td>${dono}</td>
+                        <td>${telefone}</td>
+                        <td>
+                            <button onclick="removerLinha(this)">🗑️</button>
+                        </td>
+                    </tr>
+                `;
+                tabela.innerHTML += novaLinha;
+                id++;
+                document.getElementById("form").reset();
+            } else {
+                alert("Preencha todos os campos!");
+            }
+        }
+
+        function removerLinha(botao) {
+            botao.parentElement.parentElement.remove();
+        }
+    </script>
+</body>
+</html>
